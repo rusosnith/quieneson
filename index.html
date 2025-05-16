@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Y estos quienes son?</title>
+
+    <!-- Meta tags para Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¿Y estos quienes son?">
+    <meta name="twitter:description"
+        content="Experimentos visuales para conocer más a los legisladores y candidatos de la legislatura porteña.">
+    <meta name="twitter:image" content="URL_DE_LA_IMAGEN"> <!-- Reemplazar con la URL de la imagen -->
+    <meta name="twitter:site" content="@rusosnith"> <!-- Reemplazar con tu usuario de Twitter -->
+
+    <!-- Google Fonts - Playfair Display para títulos slab serif -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Enlace al archivo JS externo -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">¿Y estos quienes son?</h1>
+            <p class="subtitle">
+                Experimentos visuales para conocer más a los legisladores
+                y candidatos de la legislatura porteña
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Visualization 1 -->
+            <section class="viz-section anchor-target" id="viz1">
+                <div class="viz-header">
+                    <h2 class="viz-title">Propuestómetro</h2>
+                    <p class="viz-description">
+                        Basándome en las propuestas recolectadas por el <a
+                            href="https://www.lanacion.com.ar/sociedad/a-quien-voto-la-nacion-le-pregunto-a-los-17-candidatos-sus-proyectos-para-la-ciudad-nid15052025/?utm_term=Autofeed&utm_medium=Echobox&utm_source=Twitter#Echobox=1747278888">equipo
+                            de La Nación en esta nota</a>
+                    </p>
+                </div>
+                <div class="embed-container">
+                    <!-- Aquí irá tu primera visualización -->
+                    <span>
+                        <div id="observablehq-viewof-ejeX-3802a380"></div>
+                        <div id="observablehq-viewof-ejeY-3802a380"></div>
+                        <div id="observablehq-viewof-tema-3802a380"></div>
+                        <div id="observablehq-chartPropuestas-3802a380"></div>
+
+                        <link rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+                        <script type="module">
+                            import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+                            import define from "https://api.observablehq.com/@rusosnith/propuestometro.js?v=4";
+                            new Runtime().module(define, name => {
+                                if (name === "viewof ejeX") return new Inspector(document.querySelector("#observablehq-viewof-ejeX-3802a380"));
+                                if (name === "viewof ejeY") return new Inspector(document.querySelector("#observablehq-viewof-ejeY-3802a380"));
+                                if (name === "viewof tema") return new Inspector(document.querySelector("#observablehq-viewof-tema-3802a380"));
+                                if (name === "chartPropuestas") return new Inspector(document.querySelector("#observablehq-chartPropuestas-3802a380"));
+                                return ["chartPropuestasOld", "propuestas", "propuestasPromedio"].includes(name);
+                            });
+                        </script>
+                    </span>
+                </div>
+                <div class="viz-actions">
+                    <a href="#viz1" class="btn">🔗 Enlace directo</a>
+                    <button class="btn btn-primary" onclick="shareVisualization('Perfil de Legisladores', '#viz1')">
+                        📤 Compartir
+                    </button>
+                </div>
+            </section>
+
+            <!-- Visualization 2 -->
+            <section class="viz-section anchor-target" id="viz2">
+                <div class="viz-header">
+                    <h2 class="viz-title">Análisis de Votaciones</h2>
+                    <p class="viz-description">
+                        Explora cómo votan los legisladores en diferentes temas, identifica patrones de coalición y
+                        analiza
+                        la cohesión de los bloques políticos a través del tiempo. Visualiza la dinámica política de la
+                        Legislatura Porteña en acción.
+                    </p>
+                </div>
+                <div class="embed-container">
+                    <!-- Aquí irá tu segunda visualización -->
+                    <span>Embed de la segunda visualización</span>
+                </div>
+                <div class="viz-actions">
+                    <a href="#viz2" class="btn">🔗 Enlace directo</a>
+                    <button class="btn btn-primary" onclick="shareVisualization('Análisis de Votaciones', '#viz2')">
+                        📤 Compartir
+                    </button>
+                </div>
+            </section>
+
+            <!-- Visualization 3 -->
+            <section class="viz-section anchor-target" id="viz3">
+                <div class="viz-header">
+                    <h2 class="viz-title">Red de Conexiones</h2>
+                    <p class="viz-description">
+                        Una red interactiva que muestra las conexiones entre legisladores basada en proyectos conjuntos,
+                        participación en comisiones y colaboraciones legislativas. Descubre los clusters de poder y las
+                        alianzas que van más allá de los partidos políticos.
+                    </p>
+                </div>
+                <div class="embed-container">
+                    <!-- Aquí irá tu tercera visualización -->
+                    <span>Embed de la tercera visualización</span>
+                </div>
+                <div class="viz-actions">
+                    <a href="#viz3" class="btn">🔗 Enlace directo</a>
+                    <button class="btn btn-primary" onclick="shareVisualization('Red de Conexiones', '#viz3')">
+                        📤 Compartir
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">¿Y estos quienes son?</h3>
+                    <p class="footer-description">
+                        Un proyecto de visualización de datos para conocer mejor a los legisladores de la Ciudad de
+                        Buenos Aires.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contacto</h4>
+                    <p class="footer-info">
+                        <strong>Autor:</strong> Andres Snitcofsky<br>
+                        <strong>Web:</strong><a href="http://visualizando.ar" target="_blank" "footer-link">
+                            visualizando.ar</a><br>
+                        <strong>Twitter:</strong> <a href="http://twitter.com/rusosnith" target="_blank"
+                            class="footer-link">@rusosnith</a>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Datos</h4>
+                    <p class="footer-info">
+                        Los datos utilizados son de fuentes públicas.<br>
+                        Última actualización: [Fecha]<br>
+                        <a href="#" class="footer-link">Descargar dataset</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 - Hecho con ❤️ y D3.js
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Código fuente</a>
+                    <a href="#" class="footer-link">Metodología</a>
+                    <a href="#" class="footer-link">Licencia</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

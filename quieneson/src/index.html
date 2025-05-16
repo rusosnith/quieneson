@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Y estos quienes son?</title>
+    
+    <!-- Google Fonts - Playfair Display para títulos slab serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- D3.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">¿Y estos quienes son?</h1>
+            <p class="subtitle">
+                Experimentos visuales para conocer más a los legisladores 
+                y candidatos de la legislatura porteña
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Visualization 1 -->
+            <section class="viz-section anchor-target" id="viz1">
+                <div class="viz-header">
+                    <h2 class="viz-title">Perfil de Legisladores</h2>
+                    <p class="viz-description">
+                        Una visualización interactiva que permite explorar en detalle los perfiles de los legisladores porteños, 
+                        incluyendo su experiencia, edad, género, y trayectoria política. Descubre quiénes son las personas que 
+                        toman las decisiones en la Ciudad de Buenos Aires.
+                    </p>
+                </div>
+                <div class="embed-container">
+                    <!-- Aquí irá tu primera visualización -->
+                    <span>Embed de la primera visualización</span>
+                </div>
+                <div class="viz-actions">
+                    <a href="#viz1" class="btn">🔗 Enlace directo</a>
+                    <button class="btn btn-primary" onclick="shareVisualization('Perfil de Legisladores', '#viz1')">
+                        📤 Compartir
+                    </button>
+                </div>
+            </section>
+
+            <!-- Visualization 2 -->
+            <section class="viz-section anchor-target" id="viz2">
+                <div class="viz-header">
+                    <h2 class="viz-title">Análisis de Votaciones</h2>
+                    <p class="viz-description">
+                        Explora cómo votan los legisladores en diferentes temas, identifica patrones de coalición y analiza 
+                        la cohesión de los bloques políticos a través del tiempo. Visualiza la dinámica política de la 
+                        Legislatura Porteña en acción.
+                    </p>
+                </div>
+                <div class="embed-container">
+                    <!-- Aquí irá tu segunda visualización -->
+                    <span>Embed de la segunda visualización</span>
+                </div>
+                <div class="viz-actions">
+                    <a href="#viz2" class="btn">🔗 Enlace directo</a>
+                    <button class="btn btn-primary" onclick="shareVisualization('Análisis de Votaciones', '#viz2')">
+                        📤 Compartir
+                    </button>
+                </div>
+            </section>
+
+            <!-- Visualization 3 -->
+            <section class="viz-section anchor-target" id="viz3">
+                <div class="viz-header">
+                    <h2 class="viz-title">Red de Conexiones</h2>
+                    <p class="viz-description">
+                        Una red interactiva que muestra las conexiones entre legisladores basada en proyectos conjuntos, 
+                        participación en comisiones y colaboraciones legislativas. Descubre los clusters de poder y las 
+                        alianzas que van más allá de los partidos políticos.
+                    </p>
+                </div>
+                <div class="embed-container">
+                    <!-- Aquí irá tu tercera visualización -->
+                    <span>Embed de la tercera visualización</span>
+                </div>
+                <div class="viz-actions">
+                    <a href="#viz3" class="btn">🔗 Enlace directo</a>
+                    <button class="btn btn-primary" onclick="shareVisualization('Red de Conexiones', '#viz3')">
+                        📤 Compartir
+                    </button>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">¿Y estos quienes son?</h3>
+                    <p class="footer-description">
+                        Un proyecto de visualización de datos para conocer mejor a los legisladores de la Ciudad de Buenos Aires.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contacto</h4>
+                    <p class="footer-info">
+                        <strong>Autor:</strong> [Tu nombre]<br>
+                        <strong>Email:</strong> [tu-email@ejemplo.com]<br>
+                        <strong>GitHub:</strong> <a href="#" class="footer-link">@tu-usuario</a>
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Datos</h4>
+                    <p class="footer-info">
+                        Los datos utilizados son de fuentes públicas.<br>
+                        Última actualización: [Fecha]<br>
+                        <a href="#" class="footer-link">Descargar dataset</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 - Hecho con ❤️ y D3.js
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Código fuente</a>
+                    <a href="#" class="footer-link">Metodología</a>
+                    <a href="#" class="footer-link">Licencia</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
