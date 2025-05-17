@@ -89,7 +89,7 @@
                             href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
                         <script type="module">
                             import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-                            import define from "https://api.observablehq.com/@rusosnith/propuestometro.js?v=4";
+                            import define from "https://api.observablehq.com/@rusosnith/propuestometro@paused.js?v=4";
                             new Runtime().module(define, name => {
                                 if (name === "viewof ejeX") return new Inspector(document.querySelector("#observablehq-viewof-ejeX"));
                                 if (name === "viewof ejeY") return new Inspector(document.querySelector("#observablehq-viewof-ejeY"));
