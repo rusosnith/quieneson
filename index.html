@@ -38,6 +38,10 @@
                 Experimentos visuales para conocer más a los legisladores
                 y candidatos de la legislatura porteña
             </p>
+            <p style="margin-top: 1.5em; font-style: italic; color: #aaa;"></p>
+                Visualizaciones de datos de Andres Snitcofsky
+            </p>
+            
         </div>
     </header>
 
@@ -52,28 +56,29 @@
                     <p class="viz-description">
                         Basándome en las propuestas recolectadas por el <a
                             href="https://www.lanacion.com.ar/sociedad/a-quien-voto-la-nacion-le-pregunto-a-los-17-candidatos-sus-proyectos-para-la-ciudad-nid15052025/?utm_term=Autofeed&utm_medium=Echobox&utm_source=Twitter#Echobox=1747278888">equipo
-                            de La Nación en esta nota</a>
+                            de La Nación en esta nota</a> le pedí a una IA que me ayudara a clasificar las propuestas (usé Claude.Ai) en distintos ejes con los que pueden jugar acá abajo. Idealmente cada propuesta deberia ser analizada por un equipo multidiciplinario de humanos pero como no tengo ni tiempo ni recursos, aquí estamos. Tomenlo con pinzas y diviertanse discutiendo en redes.
                     </p>
                 </div>
                 <div class="embed-container">
                     <!-- Aquí irá tu primera visualización -->
                     <span>
-                        <div id="observablehq-viewof-ejeX-3802a380"></div>
-                        <div id="observablehq-viewof-ejeY-3802a380"></div>
-                        <div id="observablehq-viewof-tema-3802a380"></div>
-                        <div id="observablehq-chartPropuestas-3802a380"></div>
-
+                        <div id="observablehq-viewof-ejeX"></div>
+                        <div id="observablehq-viewof-ejeY"></div>
+                         <div id="observablehq-viewof-tema" style="display:none"></div> 
+                        <div id="observablehq-chartPropuestas"></div>
+                            <div id="observablehq-desc"></div>
                         <link rel="stylesheet"
                             href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
                         <script type="module">
                             import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
                             import define from "https://api.observablehq.com/@rusosnith/propuestometro.js?v=4";
                             new Runtime().module(define, name => {
-                                if (name === "viewof ejeX") return new Inspector(document.querySelector("#observablehq-viewof-ejeX-3802a380"));
-                                if (name === "viewof ejeY") return new Inspector(document.querySelector("#observablehq-viewof-ejeY-3802a380"));
-                                if (name === "viewof tema") return new Inspector(document.querySelector("#observablehq-viewof-tema-3802a380"));
-                                if (name === "chartPropuestas") return new Inspector(document.querySelector("#observablehq-chartPropuestas-3802a380"));
-                                return ["chartPropuestasOld", "propuestas", "propuestasPromedio"].includes(name);
+                                if (name === "viewof ejeX") return new Inspector(document.querySelector("#observablehq-viewof-ejeX"));
+                                if (name === "viewof ejeY") return new Inspector(document.querySelector("#observablehq-viewof-ejeY"));
+                                if (name === "viewof tema") return new Inspector(document.querySelector("#observablehq-viewof-tema"));
+                                if (name === "desc") return new Inspector(document.querySelector("#observablehq-desc"));
+                                if (name === "chartPropuestas") return new Inspector(document.querySelector("#observablehq-chartPropuestas"));
+                                return ["chartPropuestas", "propuestas", "propuestasPromedio", "update", "desc"].includes(name);
                             });
                         </script>
                     </span>
@@ -89,17 +94,35 @@
             <!-- Visualization 2 -->
             <section class="viz-section anchor-target" id="viz2">
                 <div class="viz-header">
-                    <h2 class="viz-title">Análisis de Votaciones</h2>
+                    <h2 class="viz-title">Mapa de Legisladores y Candidatos</h2>
                     <p class="viz-description">
-                        Explora cómo votan los legisladores en diferentes temas, identifica patrones de coalición y
-                        analiza
-                        la cohesión de los bloques políticos a través del tiempo. Visualiza la dinámica política de la
-                        Legislatura Porteña en acción.
+                        Acá crucé los datos obtenidos de la Legislatura Porteña (legisladores actuales) y del Tribunal Electoral de CABA (candidatos) y mediante el DNI averigué donde vota cada uno. Si. Puse los CAPCHA a mano. El análisis geográfico es para que saquen las conclusiones que quieran, espero les sirva para votar más informadamente o ganar discusiones en tuiter.
                     </p>
                 </div>
                 <div class="embed-container">
                     <!-- Aquí irá tu segunda visualización -->
-                    <span>Embed de la segunda visualización</span>
+                    <span><div id="observablehq-chartLegisladores-0a0b1e08"></div>
+<div id="observablehq-chartSectores-0a0b1e08"></div>
+<div id="observablehq-chartCandidatosMap-0a0b1e08"></div>
+<div id="observablehq-chartCandidatosMapSecciones-0a0b1e08"></div>
+<div id="observablehq-chartMultiples-0a0b1e08"></div>
+<div id="observablehq-chartEdades-0a0b1e08"></div>
+<div id="observablehq-chartEdadesRegresion-0a0b1e08"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/@rusosnith/conociendo-nuestra-fauna.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "chartLegisladores") return new Inspector(document.querySelector("#observablehq-chartLegisladores-0a0b1e08"));
+  if (name === "chartSectores") return new Inspector(document.querySelector("#observablehq-chartSectores-0a0b1e08"));
+  if (name === "chartCandidatosMap") return new Inspector(document.querySelector("#observablehq-chartCandidatosMap-0a0b1e08"));
+  if (name === "chartCandidatosMapSecciones") return new Inspector(document.querySelector("#observablehq-chartCandidatosMapSecciones-0a0b1e08"));
+  if (name === "chartMultiples") return new Inspector(document.querySelector("#observablehq-chartMultiples-0a0b1e08"));
+  if (name === "chartEdades") return new Inspector(document.querySelector("#observablehq-chartEdades-0a0b1e08"));
+  if (name === "chartEdadesRegresion") return new Inspector(document.querySelector("#observablehq-chartEdadesRegresion-0a0b1e08"));
+});
+</script></span>
                 </div>
                 <div class="viz-actions">
                     <a href="#viz2" class="btn">🔗 Enlace directo</a>
@@ -112,22 +135,21 @@
             <!-- Visualization 3 -->
             <section class="viz-section anchor-target" id="viz3">
                 <div class="viz-header">
-                    <h2 class="viz-title">Red de Conexiones</h2>
+                    <h2 class="viz-title">¿Cuántas Bancas?</h2>
                     <p class="viz-description">
-                        Una red interactiva que muestra las conexiones entre legisladores basada en proyectos conjuntos,
-                        participación en comisiones y colaboraciones legislativas. Descubre los clusters de poder y las
-                        alianzas que van más allá de los partidos políticos.
-                    </p>
+                        Este es un simulador de la cantidad de bancas que obtendría cada partido en función de los votos obtenidos. Jugas con lo que crees que va a pasar en las elecciones y el sistema te dice cuántas bancas obtendría cada partido. </p>
                 </div>
                 <div class="embed-container">
                     <!-- Aquí irá tu tercera visualización -->
-                    <span>Embed de la tercera visualización</span>
+                    <span>
+                        <a href="http://visualizando.ar/cuantasbancas" target="_blank">
+                            <img src="captura.png" alt="Red de Conexiones - captura" style="max-width:100%;height:auto;display:block;margin:0 auto;">
+                        </a>
+                    </span>
                 </div>
                 <div class="viz-actions">
-                    <a href="#viz3" class="btn">🔗 Enlace directo</a>
-                    <button class="btn btn-primary" onclick="shareVisualization('Red de Conexiones', '#viz3')">
-                        📤 Compartir
-                    </button>
+                    <a href="http://visualizando.ar/cuantasbancas" target="_blank" class="btn">Ir a CuantasBancas</a>
+                    
                 </div>
             </section>
 
@@ -149,10 +171,10 @@
                 <div class="footer-section">
                     <h4 class="footer-subtitle">Contacto</h4>
                     <p class="footer-info">
-                        <strong>Autor:</strong> Andres Snitcofsky<br>
-                        <strong>Web:</strong><a href="http://visualizando.ar" target="_blank" "footer-link">
+                        <strong>Andres Snitcofsky</strong><br>
+                        <a href="http://visualizando.ar" target="_blank" "footer-link">
                             visualizando.ar</a><br>
-                        <strong>Twitter:</strong> <a href="http://twitter.com/rusosnith" target="_blank"
+                        <a href="http://twitter.com/rusosnith" target="_blank"
                             class="footer-link">@rusosnith</a>
                     </p>
                 </div>
@@ -161,8 +183,8 @@
                     <h4 class="footer-subtitle">Datos</h4>
                     <p class="footer-info">
                         Los datos utilizados son de fuentes públicas.<br>
-                        Última actualización: [Fecha]<br>
-                        <a href="#" class="footer-link">Descargar dataset</a>
+                        Última actualización: 16-Mayo-2025<br>
+             
                     </p>
                 </div>
             </div>
@@ -171,11 +193,7 @@
                 <p class="footer-copyright">
                     © 2025 - Hecho con ❤️ y D3.js
                 </p>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">Código fuente</a>
-                    <a href="#" class="footer-link">Metodología</a>
-                    <a href="#" class="footer-link">Licencia</a>
-                </div>
+                
             </div>
         </div>
     </footer>
